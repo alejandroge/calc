@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Calc</string>
+    <string name="view_descr">Full View Description</string>
+    <string name="price_disp">Precio de los Artículos</string>
 </resources>
