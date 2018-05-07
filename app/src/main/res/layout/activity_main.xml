@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray"
+    android:background="@android:color/background_light"
     tools:context="com.example.alejandro.calc.MainActivity">
 
     <ListView
@@ -14,8 +14,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@android:color/holo_blue_bright"
-        app:layout_constraintBottom_toTopOf="@+id/priceDisplay"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/display"
         app:layout_constraintEnd_toStartOf="@+id/articlesGrid"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
     <GridView
         android:id="@+id/articlesGrid"
         android:layout_width="0dp"
-        android:layout_height="fill_parent"
+        android:layout_height="596dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
@@ -32,27 +32,83 @@
         android:gravity="center"
         android:numColumns="auto_fit"
         android:stretchMode="columnWidth"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/oneHundredButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/countCheck"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"></GridView>
 
     <TextView
-        android:id="@+id/priceDisplay"
+        android:id="@+id/display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="@string/price_disp"
-        android:textColor="@android:color/background_light"
+        android:text="@string/display"
+        android:textColor="@android:color/black"
         android:textColorLink="@color/colorAccent"
-        android:textSize="18sp"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/countCheck" />
+
+    <TextView
+        android:id="@+id/totalDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/price_disp"
+        android:textColor="@android:color/black"
+        android:textColorLink="@color/colorAccent"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/articlesGrid" />
+
+    <Button
+        android:id="@+id/oneHundredButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/one_hundred"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/twoHundredButton"
+        app:layout_constraintStart_toStartOf="@+id/articlesGrid" />
+
+    <Button
+        android:id="@+id/twoHundredButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/two_hundred"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fiveHundredButton"
+        app:layout_constraintStart_toEndOf="@+id/oneHundredButton" />
+
+    <Button
+        android:id="@+id/fiveHundredButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/five_hundred"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/resetButton"
+        app:layout_constraintStart_toEndOf="@+id/twoHundredButton" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/ce_string"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fiveHundredButton" />
 
 </android.support.constraint.ConstraintLayout>

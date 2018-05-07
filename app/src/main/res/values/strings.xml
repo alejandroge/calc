@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Calc</string>
     <string name="view_descr">Full View Description</string>
-    <string name="price_disp">Precio de los Artículos</string>
+    <string name="display">Total:</string>
+    <string name="price_disp">$ 0.00 </string>
+    <string name="one_hundred">$100</string>
+    <string name="two_hundred">$200</string>
+    <string name="five_hundred">$500</string>
+    <string name="ce_string">CE</string>
 </resources>

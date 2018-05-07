@@ -8,13 +8,14 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class StableArrayAdapter extends ArrayAdapter {
     private Context context;
     private ArrayList<String> names;
     private ArrayList<Double> prices;
 
-    public StableArrayAdapter(Context context, ArrayList<String> names,
+    StableArrayAdapter(Context context, ArrayList<String> names,
                               ArrayList<Double> prices) {
         super(context, -1, names);
         this.context = context;
@@ -27,11 +28,11 @@ public class StableArrayAdapter extends ArrayAdapter {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.row_layout, parent, false);
-        TextView nameView = (TextView) rowView.findViewById(R.id.itemName);
-        TextView priceView = (TextView) rowView.findViewById(R.id.itemPrice);
+        TextView nameView = rowView.findViewById(R.id.itemName);
+        TextView priceView = rowView.findViewById(R.id.itemPrice);
 
         nameView.setText(names.get(position));
-        priceView.setText(prices.get(position).toString());
+        priceView.setText(String.format(Locale.ENGLISH, "$ %.2f", prices.get(position)));
 
         return rowView;
     }
